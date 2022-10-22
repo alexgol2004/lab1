@@ -1,0 +1,89 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x = 0, y = 0,k=0, d = 0, m =0, l = 0, v = 0, f = 0, z = 0;
+	bool q = false;
+	const int n = 100;
+	int ar[100]{};
+	int ar1[100]{};
+	cout << "Enter max for x" << endl;
+	cin >> m;
+	cout << "Enter min for x" << endl;
+	cin >> l;
+	cout << "Enter max for y" << endl;
+	cin >> v;
+	cout << "Enter min for y" << endl;
+	cin >> f;
+	while (k != 100)
+	{
+		ar[x] = rand();
+		if (((ar[x] % m)+l) < m)
+		{
+			ar[x] = ar[x] % m + l;
+		}
+		else
+		{
+			ar[x] = ar[x] % m;
+		}
+		k = k + 1;
+		x = x + 1;
+	}
+	int temperemen;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
+			if (ar[j] > ar[j + 1]) {
+				temperemen = ar[j];
+				ar[j] = ar[j + 1];
+				ar[j + 1] = temperemen;
+			}
+		}
+	}
+	k = 0;
+	y = 0;
+	while (k != 100)
+	{
+		ar1[y] = rand();
+		if (((ar1[y] % v)+f) < v)
+		{
+			ar1[y] = ar1[y] % v + f;
+		}
+		else
+		{
+			ar1[y] = ar1[y] % v;
+		}
+		k = k + 1;
+		y = y + 1;
+	}
+	int temper;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
+			if (ar1[j] > ar1[j + 1]) {
+				temper = ar1[j];
+				ar1[j] = ar1[j + 1];
+				ar1[j + 1] = temper;
+			}
+		}
+	}
+	k = 0;
+	while (k != 100)
+	{
+		while (d != 100)
+		{
+			if ((ar[d] == ar1[k]) and (z != ar[d]))
+			{
+				cout << "y = x = " << ar[d] << endl;
+				q = true;
+				z = ar[d];
+			}
+			d = d + 1;
+			
+		}
+		k = k + 1;
+		d = 0;
+	}
+	if (q == false)
+		cout << "No matches" << endl;
+	return 0;
+}
