@@ -3,24 +3,24 @@
 void PrintM(int num)
 {
 	int ir = 0, nr = 0, kr = 0, jr = 0, k =1, j=1, n=1, numr=0;
-	int a[1000] = {};
+	int a[10000] = {};
 	numr = num;
 	numr = numr * (-1);
 	if (num > 0)
 	{
 		for (int i = 2; i <= (num / 2); i++)
 		{
-			ir = i;
 			if ((num % i) == 0)
 			{
-				a[ir - 2] = i;
+				a[ir] = i;
+				ir = ir + 1;
 			}
 		}
-		while (k < (num / 2))
+		while (k < ir)
 		{
-			while (j < (num / 2))
+			while (j < ir)
 			{
-				while (n < (num / 2))
+				while (n < ir)
 				{
 					if (((a[n] * a[j] * a[k]) == num) and (n != k) and (k != j) and (n != j))
 					{
@@ -42,17 +42,17 @@ void PrintM(int num)
 	{
 			for (int i = 2; i <= (numr / 2); i++)
 			{
-				ir = i;
 				if ((numr % i) == 0)
 				{
-					a[ir - 2] = i;
+					a[ir] = i;
+					ir = ir + 1;
 				}
 			}
-			while (k < (numr / 2))
+			while (k < ir)
 			{
-				while (j < (numr / 2))
+				while (j < ir)
 				{
-					while (n < (numr / 2))
+					while (n < ir)
 					{
 						if (((a[n] * a[j] * a[k]) == numr) and (n != k) and (k != j) and (n != j))
 						{
