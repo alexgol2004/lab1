@@ -1,0 +1,38 @@
+#include <iostream>
+
+void fsort(int a)
+{
+	int b = 0, q=1, d = 0, ar=a, aa = 0;
+	bool v = false;
+	int c[10000] = {1};
+	c[0] = (rand() % ar);
+	while (q < ar)
+	{
+		b = rand();
+		d = (b % ar);
+		while (aa<q) 
+		{
+			if (c[aa] == d)
+				v = false;
+			aa++;
+		}
+		aa = 0;
+		if (v == true)
+		{
+			c[q] = d;
+			q++;
+		}
+		v = true;
+	}
+	for (int s = 0; s < ar; s++)
+		std::cout << c[s] << ' ' << std::endl;
+}
+using namespace std;
+int main()
+{
+	cout << "Enter amount of numbers" << endl;
+	int r = 0;
+	cin >> r;
+	fsort(r);
+	return 0;
+}
