@@ -1,16 +1,15 @@
 #include <iostream>
-
+int c[1000] = { 0 };
 void fsort(int a)
 {
-	int b = 0, q=1, d = 0, ar=a, aa = 0;
+	int b = 0, q = 1, d = 0, ar = a, aa = 0;
 	bool v = false;
-	int c[10000] = {1};
 	c[0] = (rand() % ar);
 	while (q < ar)
 	{
 		b = rand();
 		d = (b % ar);
-		while (aa<q) 
+		while (aa < q)
 		{
 			if (c[aa] == d)
 				v = false;
@@ -24,15 +23,24 @@ void fsort(int a)
 		}
 		v = true;
 	}
-	for (int s = 0; s < ar; s++)
-		std::cout << c[s] << ' ' << std::endl;
 }
 using namespace std;
 int main()
 {
 	cout << "Enter amount of numbers" << endl;
-	int r = 0;
+	int r = 0, o=0, j=0, l=0;
+	int k[10000] = {};
 	cin >> r;
 	fsort(r);
+	while (o<r)
+	{
+		cout << "Enter number" << endl;
+		cin >> j;
+		l = c[o];
+		k[l] = j;
+		o++;
+	}
+	for (int t = 0; t < r; t++)
+		cout << k[t] << endl;
 	return 0;
 }
