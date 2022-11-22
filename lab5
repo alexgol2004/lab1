@@ -1,0 +1,20 @@
+#include <iostream>
+#include <clocale>
+using namespace std;
+
+int main()
+{
+    int k =0;
+    cin >> k ;
+    if (((k % 10)!=1) or (k == 11))
+    {
+        setlocale(LC_CTYPE, "rus");
+        cout<<"Кирилл Владимирович отправил " << k << " студентов на пересдачу экзамена" << endl;
+    }
+    else
+    {
+        setlocale(LC_CTYPE, "rus");
+        cout<<"Кирилл Владимирович отправил " << k << " студента на пересдачу экзамена" << endl;
+    }
+    return 0;
+}
