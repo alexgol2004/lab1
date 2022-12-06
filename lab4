@@ -28,11 +28,11 @@ using namespace std;
 int main()
 {
 	cout << "Enter amount of numbers" << endl;
-	int r = 0, o=0, j=0, l=0;
-	int k[10000] = {};
+	int r = 0, o = 0, j = 0, l = 0;
 	cin >> r;
+	int* k = new int [r];
 	fsort(r);
-	while (o<r)
+	while (o < r)
 	{
 		cout << "Enter number" << endl;
 		cin >> j;
@@ -40,7 +40,9 @@ int main()
 		k[l] = j;
 		o++;
 	}
+	cout << "Sorted numbers:" << endl;
 	for (int t = 0; t < r; t++)
 		cout << k[t] << endl;
+	delete[] k;
 	return 0;
 }
