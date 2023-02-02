@@ -8,14 +8,14 @@ int main()
 	ph[0] = id[14];
 	ph[1] = id[15];
 	ph[2] = id[16];
-	ph[3] = id[9];
-	ph[4] = id[10];
+	ph[3] = id[10];
+	ph[4] = id[11];
 	ph[5] = id[6];
 	ph[6] = id[7];
 	ph[7] = id[8];
 	ph[8] = id[9];
-	ph[9] = id[11];
-	ph[10] = id[12];
+	ph[9] = id[12];
+	ph[10] = id[13];
 	cout << ph;
 	return 0;
 }
